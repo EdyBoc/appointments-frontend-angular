@@ -18,4 +18,16 @@ export class CitaService {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
+  getCitaPorId(id: number) {
+    return this.http.get(`/api/citas/${id}`);
+  }
+
+  crearCita(cita: any) {
+    return this.http.post('/api/citas', cita);
+  }
+
+  actualizarCita(cita: any) {
+    return this.http.put(`/api/citas/${cita.id}`, cita);
+  }
+
 }
